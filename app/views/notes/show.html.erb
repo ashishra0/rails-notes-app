@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s4">
+    <div class="card horizontal yellow">
+      <div class="card-stacked">
+        <div class="card-action">
+          <span class="card-title"><%= @note.title %></span>
+        </div>
+        <div class="card-content">
+          <p><b><%= (@note.description).capitalize %></b></p>
+        </div>
+      </div>
+    </div>
+    <% if logged_in? && current_user == @note.user %>
+      <%= link_to "Edit Note", edit_note_path(@note), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete Note", note_path(@note), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %>
+    <% end %>
+  </div>
+</div>
