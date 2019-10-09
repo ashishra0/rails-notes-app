@@ -10,6 +10,20 @@
   </head>
 
   <body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <%= link_to 'Notes', root_path, :class => 'brand-logo' %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if logged_in? %>
+            <li><%= link_to 'Log Out', logout_path %></li>
+            <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
+            <li><%= link_to 'View Notes', notes_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
     <%= yield %>
   </body>
 </html>
