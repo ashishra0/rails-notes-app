@@ -1,0 +1,21 @@
+<div class="container">
+  <%= form_for(@note, :html => {class: "form-horizontal", role: "form", multipart: true}) do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title, placeholder: "Title of your note", autofocus: true %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :description, placeholder: "Add description" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.submit "Submit", class: "btn orange waves-effect waves-light right" %>
+      </div>
+    </div>
+  <% end %>
+</div>
